@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed"
             android:padding="4dp"
-            android:textSize="22sp"
+            android:textSize="24sp"
             android:textStyle="bold"
             tools:text="Giving away clock" />
 
@@ -35,8 +35,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-condensed"
-                android:paddingStart="4dp"
                 android:paddingLeft="4dp"
+                android:paddingStart="4dp"
                 tools:text="New York City" />
 
             <TextView
@@ -60,8 +60,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:fontFamily="sans-serif-condensed"
-                android:paddingStart="4dp"
                 android:paddingLeft="4dp"
+                android:paddingStart="4dp"
                 tools:text="Kevin Alvarez" />
 
             <TextView
@@ -80,14 +80,13 @@
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed"
             android:padding="4dp"
-            android:textSize="16sp"
+            android:textSize="20sp"
             tools:text="Please take this clock away from me\nPhone number is 347085394085" />
 
         <ImageView
             android:id="@+id/view_post_imageview"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            tools:src="@drawable/com_facebook_button_background"/>
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 </ScrollView>

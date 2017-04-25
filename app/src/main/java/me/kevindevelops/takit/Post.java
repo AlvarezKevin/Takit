@@ -1,10 +1,12 @@
 package me.kevindevelops.takit;
 
+import java.io.Serializable;
+
 /**
  * Created by Kevin on 4/24/2017.
  */
 
-public class Post {
+public class Post implements Serializable{
     private String username;
     private String subject;
     private String text;

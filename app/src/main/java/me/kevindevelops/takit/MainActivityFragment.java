@@ -95,7 +95,7 @@ public class MainActivityFragment extends Fragment implements Serializable{
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Post post = mPostsAdapter.getItem(position);
                 Intent intent = new Intent(getActivity(),ViewPostActivity.class);
-                intent.putExtra("POST_EXTRA", (Serializable) post);
+                intent.putExtra("POST_EXTRA",post);
                 startActivity(intent);
             }
         });
