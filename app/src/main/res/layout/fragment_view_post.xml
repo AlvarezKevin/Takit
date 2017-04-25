@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="4dp"
+    tools:context="me.kevindevelops.takit.ViewPostActivityFragment"
+    tools:showIn="@layout/activity_view_post">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/view_subject_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:padding="4dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            tools:text="Giving away clock" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/view_location_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed"
+                android:paddingStart="4dp"
+                android:paddingLeft="4dp"
+                tools:text="New York City" />
+
+            <TextView
+                android:id="@+id/view_post_email_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="right"
+                tools:text="kevinalvarez1025@gmail.com" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/view_post_username_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed"
+                android:paddingStart="4dp"
+                android:paddingLeft="4dp"
+                tools:text="Kevin Alvarez" />
+
+            <TextView
+                android:id="@+id/view_post_date_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="end"
+                tools:text="Date posted: 10-25-1999" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/view_post_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
+            android:padding="4dp"
+            android:textSize="16sp"
+            tools:text="Please take this clock away from me\nPhone number is 347085394085" />
+
+        <ImageView
+            android:id="@+id/view_post_imageview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:src="@drawable/com_facebook_button_background"/>
+
+    </LinearLayout>
+</ScrollView>
