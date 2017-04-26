@@ -1,15 +1,20 @@
 package me.kevindevelops.takit;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -29,6 +34,7 @@ public class ViewPostActivityFragment extends Fragment {
 
 
     public ViewPostActivityFragment() {
+        setHasOptionsMenu(true);
     }
 
     @Override
@@ -57,5 +63,28 @@ public class ViewPostActivityFragment extends Fragment {
 
 
         return rootView;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        getActivity().getMenuInflater().inflate(R.menu.menu_view_post,menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.action_sign_out:
+                FirebaseAuth.getInstance().signOut();
+                return true;
+            case R.id.action_email:
+                Intent intent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts("mailto",mPost.getEmail(),null));
+                intent.putExtra(Intent.EXTRA_SUBJECT,"Response to Takit Post (" + mPost.getSubject() + ")");
+                startActivity(Intent.createChooser(intent,"Send email..."));
+
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

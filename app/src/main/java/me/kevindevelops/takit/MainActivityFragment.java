@@ -187,8 +187,6 @@ public class MainActivityFragment extends Fragment implements Serializable{
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
-            case R.id.action_settings:
-                return true;
             case R.id.action_sign_out:
                 AuthUI.getInstance()
                         .signOut(getActivity());

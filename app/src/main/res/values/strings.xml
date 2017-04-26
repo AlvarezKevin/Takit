@@ -10,5 +10,6 @@
     <string name="post_subject">Post Subject</string>
     <string name="location_hint">Location</string>
     <string name="post">Post</string>
+    <string name="email">Email</string>
 
 </resources>

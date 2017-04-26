@@ -155,8 +155,6 @@ public class AddPostActivityFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         switch (id) {
-            case R.id.action_settings:
-                return true;
             case R.id.action_push_post:
                 pushPostToDatabase();
                 return true;
