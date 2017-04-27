@@ -18,14 +18,12 @@
             android:id="@+id/edit_text_subject"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.1"
             android:hint="@string/post_subject" />
 
         <EditText
             android:id="@+id/edit_text_text"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
+            android:layout_height="300dp"
             android:hint="@string/your_post"
             android:gravity="top"
             android:inputType="textMultiLine"/>
@@ -34,7 +32,6 @@
             android:id="@+id/edit_text_location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.1"
             android:hint="@string/location_hint" />
 
         <ImageButton
@@ -42,6 +39,15 @@
             android:layout_height="wrap_content"
             android:src="@drawable/ic_action_add_image"
             android:id="@+id/post_image_button"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/preview_image"/>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/add_post_imageview" />
 
     </LinearLayout>
 

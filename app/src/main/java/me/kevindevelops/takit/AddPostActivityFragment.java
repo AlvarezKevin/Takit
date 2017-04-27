@@ -14,8 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -48,6 +50,7 @@ public class AddPostActivityFragment extends Fragment {
     private EditText mPostTextEditText;
     private EditText mLocationEditText;
     private ImageButton mPhotoImageButton;
+    private ImageView mImageView;
 
     private FirebaseAuth mFirebaseAuth;
     private FirebaseDatabase mFirebaseDatabase;
@@ -74,6 +77,7 @@ public class AddPostActivityFragment extends Fragment {
         mPostTextEditText = (EditText) rootView.findViewById(R.id.edit_text_text);
         mLocationEditText = (EditText) rootView.findViewById(R.id.edit_text_location);
         mPhotoImageButton = (ImageButton) rootView.findViewById(R.id.post_image_button);
+        mImageView = (ImageView) rootView.findViewById(R.id.add_post_imageview);
 
         mSubjectEditText.setFilters(new InputFilter[]{new InputFilter.LengthFilter(SUBJECT_TEXT_LIMIT)});
         mPhotoImageButton.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +110,8 @@ public class AddPostActivityFragment extends Fragment {
                     @SuppressWarnings("VisibleForTests") Uri downloadUrl = taskSnapshot.getDownloadUrl();
                     Toast.makeText(getActivity(), "Photo saved", Toast.LENGTH_SHORT).show();
                     mPhotoUrl = downloadUrl.toString();
+
+                    Glide.with(getActivity()).load(mPhotoUrl).into(mImageView);
                 }
             });
         }
@@ -140,7 +146,7 @@ public class AddPostActivityFragment extends Fragment {
         if (validatePost()) {
             Post post = new Post(mUsername, subject, text, location, mEmail, mPhotoUrl, date);
             mDatabaseReference.push().setValue(post);
-            Log.v(LOG_TAG,"On database");
+            Log.v(LOG_TAG, "On database");
             getActivity().finish();
         }
     }

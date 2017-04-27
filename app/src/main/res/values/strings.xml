@@ -11,5 +11,6 @@
     <string name="location_hint">Location</string>
     <string name="post">Post</string>
     <string name="email">Email</string>
+    <string name="preview_image">Preview Image:</string>
 
 </resources>
